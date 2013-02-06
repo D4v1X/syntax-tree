@@ -16,5 +16,12 @@ public class Tree {
     public Tree() {
         this.root = null;
     }
+
+    public void setRoot(Node root) {
+        this.root = root;
+    }
     
+    public double run(){
+        return root.evaluate();
+    }
 }
