@@ -4,10 +4,12 @@
  */
 package syntax_tree;
 
-import Nodes.BinaryOperations.AddNode;
-import Nodes.BinaryOperations.MultiplicationNode;
+//
+import Nodes.BinaryOperators.AddNode;
+import Nodes.BinaryOperators.MultiplicationNode;
 import Nodes.Node;
 import Nodes.NumberNode;
+import static java.lang.System.out;
 import tree.Tree;
 
 /**
@@ -28,6 +30,6 @@ public class Syntax_tree {
         Node multi = new MultiplicationNode(leaf2, leaf3);
         Node sum = new AddNode(leaf1, multi);
         tree.setRoot(sum);
-        System.out.println(tree.run());
+        out.println(tree.run());
     }
 }

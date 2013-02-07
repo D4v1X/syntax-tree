@@ -2,22 +2,19 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Nodes;
+package Nodes.UnaryOperators;
+
+import Nodes.UnaryOperationNode;
 
 /**
  *
  * @author davidsantiagobarrera
  */
-public class NumberNode extends Node{
-    private final double Number;
-
-    public NumberNode(Integer Number) {
-        this.Number = Number;
-    }
+public class DecrementNode extends UnaryOperationNode{
 
     @Override
     public double evaluate() {
-        return Number;
+        return (getLeftNode().evaluate()-1);
     }
     
 }

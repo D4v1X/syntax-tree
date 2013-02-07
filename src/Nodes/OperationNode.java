@@ -4,8 +4,6 @@
  */
 package Nodes;
 
-import Nodes.Node;
-
 /**
  *
  * @author davidsantiagobarrera

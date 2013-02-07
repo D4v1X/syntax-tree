@@ -9,7 +9,7 @@ package Nodes;
  * @author davidsantiagobarrera
  */
 public abstract class BinaryOperationNode extends OperationNode{
-    private Node leftNode, rigthNode;
+    private final Node leftNode, rigthNode;
 
     public BinaryOperationNode(Node leftNode, Node rigthNode) {
         this.leftNode = leftNode;
