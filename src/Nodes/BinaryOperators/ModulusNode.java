@@ -1,17 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Nodes.BinaryOperators;
 
 import Nodes.BinaryOperationNode;
 import Nodes.Node;
 
-/**
- *
- * @author davidsantiagobarrera
- */
-public class ModulusNode extends BinaryOperationNode{
+public class ModulusNode extends BinaryOperationNode {
 
     public ModulusNode(Node leftNode, Node rigthNode) {
         super(leftNode, rigthNode);
@@ -19,7 +11,6 @@ public class ModulusNode extends BinaryOperationNode{
 
     @Override
     public double evaluate() {
-        return(getLeftNode().evaluate() % getRigthNode().evaluate());
+        return (getLeftNode().evaluate() % getRigthNode().evaluate());
     }
-    
 }

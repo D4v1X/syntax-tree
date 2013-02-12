@@ -1,14 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Nodes;
 
-/**
- *
- * @author davidsantiagobarrera
- */
-public abstract class BinaryOperationNode extends OperationNode{
+public abstract class BinaryOperationNode extends OperationNode {
+
     private final Node leftNode, rigthNode;
 
     public BinaryOperationNode(Node leftNode, Node rigthNode) {
@@ -23,5 +16,4 @@ public abstract class BinaryOperationNode extends OperationNode{
     public Node getRigthNode() {
         return rigthNode;
     }
-    
 }

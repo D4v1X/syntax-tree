@@ -1,14 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Nodes;
 
-/**
- *
- * @author davidsantiagobarrera
- */
-public class NumberNode extends Node{
+public class NumberNode extends Node {
+
     private final double Number;
 
     public NumberNode(Integer Number) {
@@ -19,5 +12,4 @@ public class NumberNode extends Node{
     public double evaluate() {
         return Number;
     }
-    
 }

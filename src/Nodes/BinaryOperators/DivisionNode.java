@@ -1,17 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Nodes.BinaryOperators;
 
 import Nodes.BinaryOperationNode;
 import Nodes.Node;
 
-/**
- *
- * @author davidsantiagobarrera
- */
-public class DivisionNode extends BinaryOperationNode{
+public class DivisionNode extends BinaryOperationNode {
 
     public DivisionNode(Node leftNode, Node rigthNode) {
         super(leftNode, rigthNode);
@@ -19,7 +11,9 @@ public class DivisionNode extends BinaryOperationNode{
 
     @Override
     public double evaluate() {
+        if (getRigthNode().evaluate() == 0.0) {
+            throw new RuntimeException("Division by Zero");
+        }
         return (getLeftNode().evaluate() / getRigthNode().evaluate());
     }
-    
 }

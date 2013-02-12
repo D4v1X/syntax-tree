@@ -1,20 +1,16 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Nodes.UnaryOperators;
 
+import Nodes.Node;
 import Nodes.UnaryOperationNode;
 
-/**
- *
- * @author davidsantiagobarrera
- */
-public class DecrementNode extends UnaryOperationNode{
+public class DecrementNode extends UnaryOperationNode {
+
+    public DecrementNode(Node leftNode) {
+        super(leftNode);
+    }
 
     @Override
     public double evaluate() {
-        return (getLeftNode().evaluate()-1);
+        return (getLeftNode().evaluate() - 1);
     }
-    
 }
