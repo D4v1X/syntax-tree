@@ -1,7 +1,7 @@
-package Nodes.UnaryOperators;
+package tree.nodes.unaryoperators;
 
-import Nodes.Node;
-import Nodes.UnaryOperationNode;
+import tree.nodes.Node;
+import tree.nodes.UnaryOperationNode;
 
 public class IncrementNode extends UnaryOperationNode {
 

@@ -1,6 +1,7 @@
-package Nodes.BinaryOperators;
+package tree.nodes.binaryoperators;
 
-import Nodes.NumberNode;
+import tree.nodes.binaryoperators.MultiplicationNode;
+import tree.nodes.ConstantNode;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -9,8 +10,8 @@ public class MultiplicationNodeTest {
     @Test
     public void testEvaluate() {
         System.out.println("evaluate MultiplicationNode");
-        NumberNode dos = new NumberNode(2);
-        NumberNode tres = new NumberNode(3);
+        ConstantNode dos = new ConstantNode(2);
+        ConstantNode tres = new ConstantNode(3);
         MultiplicationNode instance = new MultiplicationNode(dos, tres);
         double expResult = 6;
         double result = instance.evaluate();

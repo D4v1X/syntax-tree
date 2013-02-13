@@ -1,7 +1,7 @@
-package Nodes.BinaryOperators;
+package tree.nodes.binaryoperators;
 
-import Nodes.BinaryOperationNode;
-import Nodes.Node;
+import tree.nodes.BinaryOperationNode;
+import tree.nodes.Node;
 
 public class AddNode extends BinaryOperationNode {
 

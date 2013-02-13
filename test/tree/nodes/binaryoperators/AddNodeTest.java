@@ -1,6 +1,7 @@
-package Nodes.BinaryOperators;
+package tree.nodes.binaryoperators;
 
-import Nodes.NumberNode;
+import tree.nodes.binaryoperators.AddNode;
+import tree.nodes.ConstantNode;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -9,8 +10,8 @@ public class AddNodeTest {
     @Test
     public void testEvaluate() {
         System.out.println("evaluate addNode");
-        NumberNode dos = new NumberNode(2);
-        NumberNode tres = new NumberNode(3);
+        ConstantNode dos = new ConstantNode(2);
+        ConstantNode tres = new ConstantNode(3);
         AddNode instance = new AddNode(dos, tres);
         double expResult = 5;
         double result = instance.evaluate();

@@ -1,4 +1,4 @@
-package Nodes;
+package tree.nodes;
 
 public abstract class Node {
 

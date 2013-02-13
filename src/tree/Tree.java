@@ -1,6 +1,6 @@
 package tree;
 
-import Nodes.Node;
+import tree.nodes.Node;
 
 public class Tree {
 

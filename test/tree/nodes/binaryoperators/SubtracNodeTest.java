@@ -1,6 +1,7 @@
-package Nodes.BinaryOperators;
+package tree.nodes.binaryoperators;
 
-import Nodes.NumberNode;
+import tree.nodes.binaryoperators.SubtracNode;
+import tree.nodes.ConstantNode;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -9,8 +10,8 @@ public class SubtracNodeTest {
     @Test
     public void testEvaluate() {
         System.out.println("evaluate SubtracNode");
-        NumberNode dos = new NumberNode(2);
-        NumberNode tres = new NumberNode(3);
+        ConstantNode dos = new ConstantNode(2);
+        ConstantNode tres = new ConstantNode(3);
         SubtracNode instance = new SubtracNode(dos, tres);
         double expResult = -1;
         double result = instance.evaluate();
