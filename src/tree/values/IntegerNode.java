@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package tree.nodes;
+package tree.values;
 
 /**
  *
  * @author davidsantiagobarrera
  */
-public abstract class ValueNode extends Node{
-    //TODO Poner los metodos.
+public class IntegerNode extends Value {
+
 }

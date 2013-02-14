@@ -1,10 +1,10 @@
 package tree.nodes;
 
-public class ConstantNode extends Node {
+public class ConstantValueNode extends Node {
 
     private final double constant;
 
-    public ConstantNode(Integer constant) {
+    public ConstantValueNode(double constant) {
         this.constant = constant;
     }
 

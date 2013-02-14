@@ -8,20 +8,16 @@ package tree.nodes;
  *
  * @author davidsantiagobarrera
  */
-public class VariableNode extends Node {
+public class VariableValueNode extends Node {
 
     private double variable;
 
-    public VariableNode(double variable) {
+    public VariableValueNode(double variable) {
         this.variable = variable;
     }
 
     @Override
     public double evaluate() {
-        return variable;
-    }
-
-    public double getVariable() {
         return variable;
     }
 

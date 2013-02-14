@@ -11,9 +11,6 @@ public class DivisionNode extends BinaryOperationNode {
 
     @Override
     public double evaluate() {
-        if (getRigthNode().evaluate() == 0.0) {
-            throw new RuntimeException("Division by Zero");
-        }
         return (getLeftNode().evaluate() / getRigthNode().evaluate());
     }
 }
