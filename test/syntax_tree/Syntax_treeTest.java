@@ -8,7 +8,7 @@ import tree.Tree;
 import tree.nodes.ConstantValue;
 
 public class Syntax_treeTest {
-/*
+
     @Test
     public void testTree() {
         out.print("Tree: 1 + 2 * 3 = ");
@@ -40,5 +40,4 @@ public class Syntax_treeTest {
         double result = tree.run();
         assertEquals(expResult, result, 0.0);
     }
-    */
 }
