@@ -1,5 +1,7 @@
 package tree.nodes;
 
+import tree.Node;
+
 public class BinaryOperator extends Operator {
 
     private final Node leftChild, rightChild;

@@ -1,5 +1,7 @@
 package tree.nodes;
 
+import tree.Node;
+
 public class ConstantValue<T> extends Node {
 
     private final T constant;

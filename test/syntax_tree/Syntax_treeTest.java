@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import tree.Tree;
 import tree.nodes.ConstantValue;
-import tree.nodes.Node;
+import tree.Node;
 import tree.nodes.binaryoperators.AddNode;
 import tree.nodes.binaryoperators.MultiplicationNode;
 import tree.nodes.binaryoperators.SubtracNode;

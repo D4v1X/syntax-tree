@@ -1,6 +1,6 @@
 package tree.nodes.unaryoperators;
 
-import tree.nodes.Node;
+import tree.Node;
 import tree.nodes.UnaryOperationNode;
 
 public class AbsoluteNode extends UnaryOperationNode {

@@ -1,7 +1,5 @@
 package tree;
 
-import tree.nodes.Node;
-
 public class Tree {
 
     private Node root;

@@ -1,5 +1,7 @@
 package tree.nodes;
 
+import tree.Node;
+
 class VariableValue<T> extends Node {
 
     private T variable;

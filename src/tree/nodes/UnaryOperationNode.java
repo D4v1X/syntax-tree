@@ -1,5 +1,7 @@
 package tree.nodes;
 
+import tree.Node;
+
 public abstract class UnaryOperationNode extends Operator {
 
     private final Node leftNode;

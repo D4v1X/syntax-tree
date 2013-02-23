@@ -4,7 +4,7 @@
  */
 package tree.nodes.values;
 
-import tree.nodes.Node;
+import tree.Node;
 
 /**
  *
