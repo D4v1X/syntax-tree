@@ -9,7 +9,7 @@ public class DoubleNode extends ValueNode {
     }
 
     @Override
-    public double evaluate() {
+    public Object evaluate() {
         return valuedouble;
     }
 }
