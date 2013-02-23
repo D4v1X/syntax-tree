@@ -4,7 +4,7 @@ import static java.lang.System.out;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import tree.Tree;
-import tree.nodes.ConstantValueNode;
+import tree.nodes.ConstantValue;
 import tree.nodes.Node;
 import tree.nodes.binaryoperators.AddNode;
 import tree.nodes.binaryoperators.MultiplicationNode;
@@ -16,9 +16,9 @@ public class Syntax_treeTest {
     public void testTree() {
         out.print("Tree: 1 + 2 * 3 = ");
         Tree tree = new Tree();
-        Node uno = new ConstantValueNode(1.0);
-        Node dos = new ConstantValueNode(2.0);
-        Node tres = new ConstantValueNode(3.0);
+        Node uno = new ConstantValue(1.0);
+        Node dos = new ConstantValue(2.0);
+        Node tres = new ConstantValue(3.0);
         Node multi = new MultiplicationNode(dos, tres);
         Node sum = new AddNode(uno, multi);
         tree.setRoot(sum);
@@ -32,9 +32,9 @@ public class Syntax_treeTest {
     public void testTree2() {
         out.print("Tree: 1 + 2 - 3 = ");
         Tree tree = new Tree();
-        Node uno = new ConstantValueNode(1);
-        Node dos = new ConstantValueNode(2);
-        Node tres = new ConstantValueNode(3);
+        Node uno = new ConstantValue(1);
+        Node dos = new ConstantValue(2);
+        Node tres = new ConstantValue(3);
         Node resta = new SubtracNode(dos, tres);
         Node sum = new AddNode(uno, resta);
         tree.setRoot(sum);

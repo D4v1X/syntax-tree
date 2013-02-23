@@ -1,7 +1,5 @@
 package tree.nodes;
 
-import tree.nodes.Node;
-
 public abstract class BinaryOperationNode extends OperationNode {
 
     private final Node leftNode, rigthNode;

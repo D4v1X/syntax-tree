@@ -14,7 +14,7 @@ public class Tree {
         this.root = root;
     }
 
-    public double run() {
+    public Object run() {
         return root.evaluate();
     }
 }
