@@ -7,7 +7,6 @@ public class ConstantValueTest {
 
     @Test
     public void testEvaluate() {
-        System.out.println("ConstantValue: evaluate Number Doble Positive");
         ConstantValue constant = new ConstantValue<>(2.0);
         assertEquals(Double.class, constant.evaluate().getClass());
         assertEquals(2.0, (double) constant.evaluate(), 0.0);
@@ -15,7 +14,6 @@ public class ConstantValueTest {
 
     @Test
     public void testEvaluateNumNegative() {
-        System.out.println("ConstantValue: evaluate Number Double Negative");
         ConstantValue constant = new ConstantValue(-2.0);
         assertEquals(Double.class, constant.evaluate().getClass());
         assertEquals(-2.0, (double) constant.evaluate(), 0.0);
@@ -23,7 +21,6 @@ public class ConstantValueTest {
 
     @Test
     public void testEvaluateZero() {
-        System.out.println("ConstantValue: evaluate Number Zero");
         ConstantValue constant = new ConstantValue(0.0);
         assertEquals(Double.class, constant.evaluate().getClass());
         assertEquals(0.0, (double) constant.evaluate(), 0.0);
