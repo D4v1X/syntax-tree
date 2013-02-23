@@ -1,6 +1,7 @@
 package tree.nodes;
 
 public class BinaryOperation {
+    public static  final BinaryOperation add = new BinaryOperation("add", '+');
     
     private final String name;
     private final char operator;
@@ -17,5 +18,4 @@ public class BinaryOperation {
     public char getOperator() {
         return operator;
     }
-    
 }
