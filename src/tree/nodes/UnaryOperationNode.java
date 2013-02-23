@@ -1,6 +1,6 @@
 package tree.nodes;
 
-public abstract class UnaryOperationNode extends OperationNode {
+public abstract class UnaryOperationNode extends Operator {
 
     private final Node leftNode;
 
