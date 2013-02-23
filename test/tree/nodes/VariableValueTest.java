@@ -7,21 +7,22 @@ public class VariableValueTest {
 
     @Test
     public void testEvaluate() {
-        System.out.println("VariableValueNode: evaluate");
-        VariableValue instance = new VariableValue(2);
-        double expResult = 2;
-        double result = instance.evaluate();
-        assertEquals(expResult, result, 0.0);
+        System.out.println("VariableValue: evaluate");
+        VariableValue variable = new VariableValue(2.0);
+        assertEquals(Double.class, variable.evaluate().getClass());
+        assertEquals(2.0, (double) variable.evaluate(), 0.0);
     }
 
     @Test
     public void testSetVariable() {
-        System.out.println("VariableValueNode: setVariable");
-        VariableValue instance = new VariableValue(2);
-        double variable = 3;
-        instance.setVariable(variable);
-        double expResult = 3;
-        double result = instance.evaluate();
-        assertEquals(expResult, result, 0.0);
+        System.out.println("VariableValue: setVariable");
+        VariableValue variable = new VariableValue(2.0);
+        assertEquals(Double.class, variable.evaluate().getClass());
+        assertEquals(2.0, (double) variable.evaluate(), 0.0);
+        double value = 3.0;
+        variable.setVariable(value);
+        assertEquals(Double.class, variable.evaluate().getClass());
+        assertEquals(3.0, (double) variable.evaluate(), 0.0);
+
     }
 }
