@@ -5,7 +5,7 @@ import org.junit.Test;
 import tree.Node;
 
 public class BinaryOperatorTest {
-
+    
     @Test
     public void testAddDoubleDouble() {
         Node node = new BinaryOperator(BinaryOperation.add, new ConstantValue<>(3.0), new ConstantValue<>(5.0));

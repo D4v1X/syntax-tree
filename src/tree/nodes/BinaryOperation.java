@@ -15,7 +15,7 @@ public class BinaryOperation {
         return name;
     }
 
-    public char getOperator() {
-        return operator;
+    public String getOperator() {
+        return Character.toString(operator);
     }
 }
