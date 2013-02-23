@@ -7,7 +7,7 @@ import tree.Node;
 import tree.Tree;
 import tree.nodes.binary.BinaryOperation;
 import tree.nodes.binary.BinaryOperator;
-import tree.nodes.ConstantValue;
+import tree.nodes.Constant;
 
 public class Syntax_treeTest {
 
@@ -15,9 +15,9 @@ public class Syntax_treeTest {
     public void testTree() {
         out.print("Tree: 1 + 2 * 3 = ");
         Tree tree = new Tree();
-        Node uno = new ConstantValue<>(1.0);
-        Node dos = new ConstantValue<>(2.0);
-        Node tres = new ConstantValue<>(3.0);
+        Node uno = new Constant<>(1.0);
+        Node dos = new Constant<>(2.0);
+        Node tres = new Constant<>(3.0);
         Node multi = new BinaryOperator(BinaryOperation.mul, dos, tres);
         Node sum = new BinaryOperator(BinaryOperation.add, uno, multi);
         tree.setRoot(sum);
@@ -29,9 +29,9 @@ public class Syntax_treeTest {
     public void testTree2() {
         out.print("Tree: 1 + 2 - 3 = ");
         Tree tree = new Tree();
-        Node uno = new ConstantValue<>(1);
-        Node dos = new ConstantValue<>(2);
-        Node tres = new ConstantValue<>(3);
+        Node uno = new Constant<>(1);
+        Node dos = new Constant<>(2);
+        Node tres = new Constant<>(3);
         Node resta = new BinaryOperator(BinaryOperation.subtract, dos, tres);
         Node sum = new BinaryOperator(BinaryOperation.add, uno, resta);
         tree.setRoot(sum);

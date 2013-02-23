@@ -2,11 +2,11 @@ package tree.nodes;
 
 import tree.Node;
 
-class VariableValue<T> extends Node {
+class Variable<T> extends Node {
 
     private T variable;
 
-    public VariableValue(T variable) {
+    public Variable(T variable) {
         this.variable = variable;
     }
 

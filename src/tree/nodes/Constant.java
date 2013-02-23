@@ -2,11 +2,11 @@ package tree.nodes;
 
 import tree.Node;
 
-public class ConstantValue<T> extends Node {
+public class Constant<T> extends Node {
 
     private final T constant;
 
-    public ConstantValue(T constant) {
+    public Constant(T constant) {
         this.constant = constant;
     }
 

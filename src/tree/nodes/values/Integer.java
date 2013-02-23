@@ -1,10 +1,12 @@
 package tree.nodes.values;
 
-public class IntegerNode extends ValueNode {
+import tree.nodes.Value;
+
+public class Integer extends Value {
 
     private final Integer integer;
 
-    public IntegerNode(Integer integer) {
+    public Integer(Integer integer) {
         this.integer = integer;
     }
 

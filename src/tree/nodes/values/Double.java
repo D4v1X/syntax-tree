@@ -1,10 +1,12 @@
 package tree.nodes.values;
 
-public class DoubleNode extends ValueNode {
+import tree.nodes.Value;
+
+public class Double extends Value {
 
     private double valuedouble;
 
-    public DoubleNode(double valuedouble) {
+    public Double(double valuedouble) {
         this.valuedouble = valuedouble;
     }
 
