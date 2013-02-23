@@ -1,5 +1,7 @@
 package tree.nodes;
 
+import tree.nodes.binary.BinaryOperation;
+import tree.nodes.binary.BinaryOperator;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import tree.Node;

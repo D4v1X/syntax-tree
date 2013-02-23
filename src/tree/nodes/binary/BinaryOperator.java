@@ -1,4 +1,4 @@
-package tree.nodes;
+package tree.nodes.binary;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import tree.Node;
 import tree.calculator.Calculator;
 import tree.calculator.NumberCalculator;
+import tree.nodes.Operator;
 
 public class BinaryOperator extends Operator {
 

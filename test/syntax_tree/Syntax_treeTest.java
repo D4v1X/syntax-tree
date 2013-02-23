@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import tree.Node;
 import tree.Tree;
-import tree.nodes.BinaryOperation;
-import tree.nodes.BinaryOperator;
+import tree.nodes.binary.BinaryOperation;
+import tree.nodes.binary.BinaryOperator;
 import tree.nodes.ConstantValue;
 
 public class Syntax_treeTest {
