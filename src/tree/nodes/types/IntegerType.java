@@ -2,11 +2,11 @@ package tree.nodes.types;
 
 import tree.nodes.Type;
 
-public class Integer extends Type {
+public class IntegerType extends Type {
 
-    private final Integer integer;
+    private final IntegerType integer;
 
-    public Integer(Integer integer) {
+    public IntegerType(IntegerType integer) {
         this.integer = integer;
     }
 
