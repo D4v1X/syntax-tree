@@ -1,12 +1,12 @@
-package tree.nodes.values;
+package tree.nodes.types;
 
-import tree.nodes.Value;
+import tree.nodes.Type;
 
-public class Double extends Value {
+public class DoubleType extends Type {
 
     private double valuedouble;
 
-    public Double(double valuedouble) {
+    public DoubleType(double valuedouble) {
         this.valuedouble = valuedouble;
     }
 

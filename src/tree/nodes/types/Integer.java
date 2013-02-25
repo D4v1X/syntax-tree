@@ -1,8 +1,8 @@
-package tree.nodes.values;
+package tree.nodes.types;
 
-import tree.nodes.Value;
+import tree.nodes.Type;
 
-public class Integer extends Value {
+public class Integer extends Type {
 
     private final Integer integer;
 

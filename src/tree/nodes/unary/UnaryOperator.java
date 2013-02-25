@@ -5,9 +5,11 @@ import tree.nodes.Operator;
 
 public class UnaryOperator extends Operator {
 
+    private final UnaryOperation unaryOperation;
     private final Node child;
 
-    public UnaryOperator(Node child) {
+    public UnaryOperator(UnaryOperation unaryOperation, Node child) {
+        this.unaryOperation = unaryOperation;
         this.child = child;
     }
 

@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import tree.Node;
 import tree.calculator.Calculator;
-import tree.calculator.NumberCalculator;
+import tree.calculator.CoreNumberCalculator;
 import tree.nodes.Operator;
 
 public class BinaryOperator extends Operator {
@@ -18,6 +18,10 @@ public class BinaryOperator extends Operator {
         this.operation = operation;
         this.leftChild = leftChild;
         this.rightChild = rightChild;
+    }
+
+    public BinaryOperation getOperation() {
+        return operation;
     }
 
     public Node getLeftChild() {
@@ -40,16 +44,16 @@ public class BinaryOperator extends Operator {
             return null;
         }
         if ((left instanceof Double) && (right instanceof Double)) {
-            return new NumberCalculator();
+            return new CoreNumberCalculator();
         }
         if ((left instanceof Integer) && (right instanceof Double)) {
-            return new NumberCalculator();
+            return new CoreNumberCalculator();
         }
         if ((left instanceof Double) && (right instanceof Integer)) {
-            return new NumberCalculator();
+            return new CoreNumberCalculator();
         }
         if ((left instanceof Integer) && (right instanceof Integer)) {
-            return new NumberCalculator();
+            return new CoreNumberCalculator();
         }
         return null;
     }
