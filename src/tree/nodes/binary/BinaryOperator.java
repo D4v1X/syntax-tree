@@ -2,8 +2,6 @@ package tree.nodes.binary;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import tree.Node;
 import tree.calculator.Calculator;
 import tree.calculator.number.CoreNumberCalculator;
@@ -36,6 +34,8 @@ public class BinaryOperator extends Operator {
     public Object evaluate() {
         Object left = getLeftChild().evaluate();
         Object right = getRightChild().evaluate();
+        //Calculator calc = findCalculator(left, right);
+        //return calc.calculate(operation, (Type)left, (Type)right);
         return calculate(findCalculator(left, right), left, right);
     }
 
@@ -66,10 +66,8 @@ public class BinaryOperator extends Operator {
             Method method = calculator.getClass().getMethod(operation.getName(), left.getClass(), right.getClass());
             return method.invoke(calculator, left, right);
         } catch (NoSuchMethodException | SecurityException ex) {
-            Logger.getLogger(BinaryOperator.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
-            Logger.getLogger(BinaryOperator.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
