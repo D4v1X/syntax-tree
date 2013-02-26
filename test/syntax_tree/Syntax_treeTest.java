@@ -3,11 +3,11 @@ package syntax_tree;
 import static java.lang.System.out;
 import static org.junit.Assert.*;
 import org.junit.Test;
-import tree.Node;
-import tree.Tree;
-import tree.nodes.binary.BinaryOperation;
-import tree.nodes.binary.BinaryOperator;
-import tree.nodes.Constant;
+import evaluator.Node;
+import evaluator.Tree;
+import evaluator.nodes.binary.BinaryOperator;
+import evaluator.nodes.binary.BinaryOperation;
+import evaluator.nodes.Constant;
 
 public class Syntax_treeTest {
 
@@ -18,8 +18,8 @@ public class Syntax_treeTest {
         Node uno = new Constant<>(1.0);
         Node dos = new Constant<>(2.0);
         Node tres = new Constant<>(3.0);
-        Node multi = new BinaryOperator(BinaryOperation.mul, dos, tres);
-        Node sum = new BinaryOperator(BinaryOperation.add, uno, multi);
+        Node multi = new BinaryOperation(BinaryOperator.mul, dos, tres);
+        Node sum = new BinaryOperation(BinaryOperator.add, uno, multi);
         tree.setRoot(sum);
         out.println(tree.run());
         assertEquals(7.0, (double) tree.run(), 0.0);
@@ -32,8 +32,8 @@ public class Syntax_treeTest {
         Node uno = new Constant<>(1);
         Node dos = new Constant<>(2);
         Node tres = new Constant<>(3);
-        Node resta = new BinaryOperator(BinaryOperation.subtract, dos, tres);
-        Node sum = new BinaryOperator(BinaryOperation.add, uno, resta);
+        Node resta = new BinaryOperation(BinaryOperator.subtract, dos, tres);
+        Node sum = new BinaryOperation(BinaryOperator.add, uno, resta);
         tree.setRoot(sum);
         out.println(tree.run());
         assertEquals(0, (Integer)tree.run(), 0.0);
