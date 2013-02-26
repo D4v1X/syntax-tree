@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import tree.Node;
 import tree.calculator.Calculator;
-import tree.calculator.CoreNumberCalculator;
+import tree.calculator.number.CoreNumberCalculator;
 import tree.nodes.Operator;
 
 public class BinaryOperator extends Operator {

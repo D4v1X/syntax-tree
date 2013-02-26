@@ -1,4 +1,4 @@
-package tree.calculator;
+package tree.calculator.number;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
@@ -23,14 +23,5 @@ public class CoreNumberCalculatorTest {
     @Test
     public void addTest() {
         assertEquals(4.0, getCalculator().add(2.0, 2.0), 0.0);
-    }
-    @Test
-    public void addwithoverflow() {
-        try {
-            getCalculator(9.0, null).add(10.0, 8.0);
-            fail("Esta roto");
-        } catch (OverflowException ex) {
-            assertTrue(true);
-        }
     }
 }

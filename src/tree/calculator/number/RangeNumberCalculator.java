@@ -1,4 +1,4 @@
-package tree.calculator;
+package tree.calculator.number;
 
 import tree.nodes.Operation;
 import tree.nodes.Type;
