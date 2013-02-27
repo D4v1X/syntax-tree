@@ -1,11 +1,9 @@
 package evaluator.nodes.binary;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import evaluator.Node;
 import evaluator.Type;
-import evaluator.calculators.Calculator;
 import evaluator.calculator.number.CoreNumberCalculator;
+import evaluator.calculators.Calculator;
 import evaluator.nodes.Operation;
 
 public class BinaryOperation extends Operation {
@@ -35,25 +33,23 @@ public class BinaryOperation extends Operation {
     public Type evaluate() {
         Type left = getLeftChild().evaluate();
         Type right = getRightChild().evaluate();
-        Calculator calc = findCalculator(left, right);
-        return calc.calculate(operation, (Type)left, (Type)right);
-        //return calculate(findCalculator(left, right), left, right);
+        return calculate(findCalculator(left, right), left, right);
     }
 
-    private Calculator findCalculator(Object left, Object right) {
+    private Calculator findCalculator(Type left, Type right) {
         if (left == null || right == null) {
             return null;
         }
-        if ((left instanceof Double) && (right instanceof Double)) {
+        if ((left.getValue() instanceof Double) && (right.getValue() instanceof Double)) {
             return new CoreNumberCalculator();
         }
-        if ((left instanceof Integer) && (right instanceof Double)) {
+        if ((left.getValue() instanceof Integer) && (right.getValue() instanceof Double)) {
             return new CoreNumberCalculator();
         }
-        if ((left instanceof Double) && (right instanceof Integer)) {
+        if ((left.getValue() instanceof Double) && (right.getValue() instanceof Integer)) {
             return new CoreNumberCalculator();
         }
-        if ((left instanceof Integer) && (right instanceof Integer)) {
+        if ((left.getValue() instanceof Integer) && (right.getValue() instanceof Integer)) {
             return new CoreNumberCalculator();
         }
         return null;
@@ -63,13 +59,6 @@ public class BinaryOperation extends Operation {
         if (calculator == null) {
             return null;
         }
-        try {
-            Method method = calculator.getClass().getMethod(operation.getName(), left.getClass(), right.getClass());
-            return (Type) method.invoke(calculator, left, right);
-        } catch (NoSuchMethodException | SecurityException ex) {
-            return null;
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
-            return null;
-        }
+        return calculator.calculate(operation, left, right);
     }
 }

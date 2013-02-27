@@ -1,8 +1,5 @@
 package evaluator.calculator.number;
 
-import evaluator.calculator.number.NumberCalculator;
-import evaluator.calculator.number.Range;
-import evaluator.calculator.number.RangeNumberCalculator;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;

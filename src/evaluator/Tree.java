@@ -12,7 +12,7 @@ public class Tree {
         this.root = root;
     }
 
-    public Object run() {
+    public Type run() {
         return root.evaluate();
     }
 }

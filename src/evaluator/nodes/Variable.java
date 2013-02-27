@@ -23,5 +23,4 @@ class Variable extends Node {
     public Type evaluate() {
         return value;
     }
-
 }

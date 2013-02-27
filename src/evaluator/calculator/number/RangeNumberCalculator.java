@@ -1,7 +1,7 @@
 package evaluator.calculator.number;
 
-import evaluator.nodes.Operator;
 import evaluator.Type;
+import evaluator.nodes.Operator;
 
 public class RangeNumberCalculator implements NumberCalculator {
 
