@@ -1,6 +1,5 @@
 package evaluator.calculator.number;
 
-import evaluator.nodes.binary.BinaryOperator;
 import static org.junit.Assert.*;
 import org.junit.Test;
 

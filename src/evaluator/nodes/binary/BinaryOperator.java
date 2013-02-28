@@ -8,6 +8,6 @@ public class BinaryOperator extends Operator {
     public static final BinaryOperator mul = new BinaryOperator("mul", '*');
 
     public BinaryOperator(String name, char operator) {
-        super(name, operator);
+        super(name, operator,true);
     }
 }

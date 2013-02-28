@@ -37,6 +37,6 @@ public class Syntax_treeTest {
         Node sum = new BinaryOperation(BinaryOperator.add, uno, resta);
         tree.setRoot(sum);
         out.println(tree.run().getValue());
-        assertEquals(0.0, (double)tree.run().getValue(), 0.0);
+        assertEquals(0.0, (double) tree.run().getValue(), 0.0);
     }
 }

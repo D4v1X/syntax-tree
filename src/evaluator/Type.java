@@ -1,7 +1,5 @@
 package evaluator;
 
-import evaluator.Node;
-
 public abstract class Type<T> {
     
     private T value;
