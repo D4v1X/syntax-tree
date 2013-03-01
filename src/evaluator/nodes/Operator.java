@@ -4,6 +4,8 @@ public abstract class Operator {
     protected final String name;
     protected final char operator;
     protected final Boolean isBinary;
+    
+    //OperatorType.Binary
 
     public Operator(String name, char operator, Boolean isBinary) {
         this.name = name;
