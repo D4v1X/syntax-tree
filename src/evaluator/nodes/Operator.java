@@ -2,20 +2,20 @@ package evaluator.nodes;
 
 public class Operator {
 
-    public static final Operator add = new Operator("add", '+', true);
-    public static final Operator subtract = new Operator("subtract", '-', true);
-    public static final Operator mul = new Operator("mul", '*', true);
+    public static final Operator add = new Operator("add", '+', OperatorType.BINARY);
+    public static final Operator subtract = new Operator("subtract", '-', OperatorType.BINARY);
+    public static final Operator mul = new Operator("mul", '*', OperatorType.BINARY);
     
     private final String name;
     private final char operator;
-    private final Boolean isBinary;
+    private final OperatorType operatorType;
 
     //OperatorType.Binary
     
-    public Operator(String name, char operator, Boolean isBinary) {
+    public Operator(String name, char operator, OperatorType operatorType) {
         this.name = name;
         this.operator = operator;
-        this.isBinary = isBinary;
+        this.operatorType = operatorType;
     }
 
     public String getName() {
@@ -26,7 +26,7 @@ public class Operator {
         return Character.toString(operator);
     }
 
-    public Boolean getIsBinary() {
-        return isBinary;
+    public OperatorType getoperatorType() {
+        return operatorType;
     }
 }

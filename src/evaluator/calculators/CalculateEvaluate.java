@@ -8,8 +8,13 @@ public class CalculateEvaluate {
     private static HashMap<String,Operator> operatorMap;
     static{
         operatorMap = new HashMap<>();
+        operatorMap.put("+", Operator.add);
+        operatorMap.put("-", Operator.subtract);
+        operatorMap.put("*", Operator.mul);
      //   operatorMap.get("+",new Operator("+", Binary));
-     //   operatorMap.add("+",BinaryOperator.add);
     }
-    
+
+    public static Operator getOperator(String value) {
+        return operatorMap.get(value);
+    }
 }
