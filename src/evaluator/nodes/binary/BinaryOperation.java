@@ -5,20 +5,21 @@ import evaluator.Type;
 import evaluator.calculator.number.CoreNumberCalculator;
 import evaluator.calculators.Calculator;
 import evaluator.nodes.Operation;
+import evaluator.nodes.Operator;
 
 public class BinaryOperation extends Operation {
 
-    private final BinaryOperator operation;
+    private final Operator operator;
     private final Node leftChild, rightChild;
 
-    public BinaryOperation(BinaryOperator operation, Node leftChild, Node rightChild) {
-        this.operation = operation;
+    public BinaryOperation(Operator operation, Node leftChild, Node rightChild) {
+        this.operator = operation;
         this.leftChild = leftChild;
         this.rightChild = rightChild;
     }
 
-    public BinaryOperator getOperation() {
-        return operation;
+    public Operator getOperator() {
+        return operator;
     }
 
     public Node getLeftChild() {
@@ -59,6 +60,6 @@ public class BinaryOperation extends Operation {
         if (calculator == null) {
             return null;
         }
-        return calculator.calculate(operation, left, right);
+        return calculator.calculate(operator, left, right);
     }
 }

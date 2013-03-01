@@ -1,12 +1,17 @@
 package evaluator.nodes;
 
-public abstract class Operator {
-    protected final String name;
-    protected final char operator;
-    protected final Boolean isBinary;
-    
-    //OperatorType.Binary
+public class Operator {
 
+    public static final Operator add = new Operator("add", '+', true);
+    public static final Operator subtract = new Operator("subtract", '-', true);
+    public static final Operator mul = new Operator("mul", '*', true);
+    
+    private final String name;
+    private final char operator;
+    private final Boolean isBinary;
+
+    //OperatorType.Binary
+    
     public Operator(String name, char operator, Boolean isBinary) {
         this.name = name;
         this.operator = operator;

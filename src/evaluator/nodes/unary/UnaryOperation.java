@@ -3,13 +3,14 @@ package evaluator.nodes.unary;
 import evaluator.Node;
 import evaluator.Type;
 import evaluator.nodes.Operation;
+import evaluator.nodes.Operator;
 
 public class UnaryOperation extends Operation {
 
-    private final UnaryOperator unaryOperation;
+    private final Operator unaryOperation;
     private final Node child;
 
-    public UnaryOperation(UnaryOperator unaryOperation, Node child) {
+    public UnaryOperation(Operator unaryOperation, Node child) {
         this.unaryOperation = unaryOperation;
         this.child = child;
     }

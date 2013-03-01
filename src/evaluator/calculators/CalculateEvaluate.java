@@ -9,6 +9,7 @@ public class CalculateEvaluate {
     static{
         operatorMap = new HashMap<>();
      //   operatorMap.get("+",new Operator("+", Binary));
+     //   operatorMap.add("+",BinaryOperator.add);
     }
     
 }
