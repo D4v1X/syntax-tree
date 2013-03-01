@@ -11,7 +11,7 @@ public class CalculateEvaluate {
         operatorMap.put("+", Operator.add);
         operatorMap.put("-", Operator.subtract);
         operatorMap.put("*", Operator.mul);
-     //   operatorMap.get("+",new Operator("+", Binary));
+//        operatorMap.get("+",new Operator("+", OperatorType.BINARY));
     }
 
     public static Operator getOperator(String value) {
