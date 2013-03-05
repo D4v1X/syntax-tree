@@ -1,8 +1,5 @@
 package evaluator.calculator.number;
 
-import evaluator.Type;
-import evaluator.nodes.Operator;
-
 public class RangeNumberCalculator implements NumberCalculator {
 
     private final NumberCalculator calculator;
@@ -26,8 +23,13 @@ public class RangeNumberCalculator implements NumberCalculator {
     }
 
     private Double validate(Double arg0) {
-        if(arg0 > getUpperLimit()) return null;
-        if(arg0 < getLowerLimit()) return null;
+        if (arg0 > getUpperLimit()) {
+            return null;
+            // TODO falta Implemetar limites de rango
+        }
+        if (arg0 < getLowerLimit()) {
+            return null;
+        }
         return arg0;
     }
 
@@ -89,10 +91,5 @@ public class RangeNumberCalculator implements NumberCalculator {
     @Override
     public Integer mul(Integer arg0, Integer arg1) {
         return calculator.mul(arg0, arg1);
-    }
-
-    @Override
-    public Type calculate(Operator operation, Type p0, Type p1) {
-        return calculator.calculate(operation, p0, p1);
     }
 }
