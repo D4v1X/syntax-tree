@@ -1,7 +1,7 @@
 package evaluator.nodes;
 
-import evaluator.Type;
 import evaluator.Node;
+import evaluator.Type;
 
 public class Constant extends Node {
 
