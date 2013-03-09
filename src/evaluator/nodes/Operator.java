@@ -1,7 +1,13 @@
 package evaluator.nodes;
 
 public class Operator {
-
+    //private
+    //crear metodo publico
+    //public static operator get(string symbol)
+    //chack operator()
+    //operator get (symbol);
+    //clase parser abstracta
+    //symbolo extend opetator
     public static final Operator add = new Operator("add", '+', OperatorType.BINARY);
     public static final Operator subtract = new Operator("subtract", '-', OperatorType.BINARY);
     public static final Operator mul = new Operator("mul", '*', OperatorType.BINARY);

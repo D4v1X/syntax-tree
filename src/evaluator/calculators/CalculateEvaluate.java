@@ -5,27 +5,38 @@ import evaluator.calculator.number.CoreNumberCalculator;
 import evaluator.nodes.Operator;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class CalculateEvaluate implements Evaluate {
 
-    private static HashMap<String, Operator> operatorMap;
+    private static HashMap<String, Method> linkedTable;
+    private static List<Class<? extends Calculator>> calculators = new ArrayList<>();
 
     static {
-        operatorMap = new HashMap<>();
-        operatorMap.put("+", Operator.add);
-        operatorMap.put("-", Operator.subtract);
-        operatorMap.put("*", Operator.mul);
-//        operatorMap.get("+",new Operator("+", OperatorType.BINARY));
+        calculators.addAll(Arrays.asList(CoreNumberCalculator.class));
     }
 
-    public static Operator getOperator(String value) {
-        return operatorMap.get(value);
+    static {
+        linkedTable = new HashMap<>();
+        for (Class calculator : calculators) {
+            Method[] methods = calculator.getDeclaredMethods();
+            for (Method method : methods) {
+                linkedTable.put(getMethodSignature(method), method);
+            }
+        }
+//        linkedTable.put("addDoubleDouble", null);
+//        linkedTable.put("+", Operator.add);
+//        linkedTable.put("-", Operator.subtract);
+//        linkedTable.put("*", Operator.mul);
+//        operatorMap.get("+",new Operator("+", OperatorType.BINARY));
     }
 
     @Override
     public Type calculate(Operator operator, Type arg0, Type arg1) {
-        Calculator calculator = findCalculator(arg0, arg1);
+        Method method = linkedTable.get(getsignature(operator, arg0, arg1));
 //        Method[] OperatorMethods;
 //        Class[] allClass = calculator.getClass().getClasses();
 //        if (allmethods == null) {
@@ -37,13 +48,12 @@ public class CalculateEvaluate implements Evaluate {
 //                // TODO Poco a poco xD
 //            }
 //        }
-        if (operator == null || calculator == null) {
+        if (operator == null) {
             return null;
         }
         try {
-            Method method = calculator.getClass().getMethod(operator.getName(), arg0.getValue().getClass(), arg1.getValue().getClass());
-            return findType(method.invoke(calculator, arg0.getValue(), arg1.getValue()));
-        } catch (NoSuchMethodException | SecurityException ex) {
+            return findType(method.invoke(method.getDeclaringClass().newInstance(), arg0.getValue(), arg1.getValue()));
+        } catch (InstantiationException ex) {
             return null;
         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
             return null;
@@ -60,22 +70,16 @@ public class CalculateEvaluate implements Evaluate {
         return null;
     }
 
-    private Calculator findCalculator(Type arg0, Type arg1) {
-        if (arg0 == null || arg1 == null) {
-            return null;
+    private static String getMethodSignature(Method method) {
+        String signature = method.getName();
+        Class<?>[] params = method.getParameterTypes();
+        for (Class param : params) {
+            signature = signature + param.getSimpleName();
         }
-        if ((arg0.getValue() instanceof Double) && (arg1.getValue() instanceof Double)) {
-            return new CoreNumberCalculator();
-        }
-        if ((arg0.getValue() instanceof Integer) && (arg1.getValue() instanceof Double)) {
-            return new CoreNumberCalculator();
-        }
-        if ((arg0.getValue() instanceof Double) && (arg1.getValue() instanceof Integer)) {
-            return new CoreNumberCalculator();
-        }
-        if ((arg0.getValue() instanceof Integer) && (arg1.getValue() instanceof Integer)) {
-            return new CoreNumberCalculator();
-        }
-        return null;
+        return signature;
+    }
+
+    private String getsignature(Operator operator, Type arg0, Type arg1) {
+        return (operator.getName() + arg0.getClass().getSimpleName() + arg1.getClass().getSimpleName());
     }
 }
