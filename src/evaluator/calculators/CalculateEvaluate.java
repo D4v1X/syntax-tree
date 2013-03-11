@@ -36,21 +36,16 @@ public class CalculateEvaluate implements Evaluate {
 
     @Override
     public Type calculate(Operator operator, Type arg0, Type arg1) {
+        if (operator == null) {
+            return null;
+        }
         Method method = linkedTable.get(getsignature(operator, arg0, arg1));
-//        Method[] OperatorMethods;
-//        Class[] allClass = calculator.getClass().getClasses();
-//        if (allmethods == null) {
-//            return null;
-//        }
 //        for (Method method : allmethods) {
 //            Operators anno = method.getAnnotation(Operators.class);
 //            if (anno.value().equals(operator.getOperator())) {
 //                // TODO Poco a poco xD
 //            }
 //        }
-        if (operator == null) {
-            return null;
-        }
         try {
             return findType(method.invoke(method.getDeclaringClass().newInstance(), arg0.getValue(), arg1.getValue()));
         } catch (InstantiationException ex) {
