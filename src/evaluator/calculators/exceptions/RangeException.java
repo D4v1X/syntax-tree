@@ -1,5 +1,4 @@
 package evaluator.calculators.exceptions;
 
-class RangeException extends RuntimeException{
-    
+class RangeException extends RuntimeException {
 }

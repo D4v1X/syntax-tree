@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class OperatorTest {
-    
+
     @Test
     public void testAddDoubleDouble() {
         Node node = new BinaryOperation(Operator.add, new Constant(new Double(3.0)), new Constant(new Double(5.0)));

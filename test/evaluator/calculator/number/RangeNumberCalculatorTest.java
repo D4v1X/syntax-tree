@@ -22,9 +22,9 @@ public class RangeNumberCalculatorTest {
     private RangeNumberCalculator getCalculator(Double upperLimit, Double lowerLimit) {
         return new RangeNumberCalculator(coreNumberCalculator, new Range(upperLimit, lowerLimit));
     }
-    
+
     @Test
-    public void add(){
+    public void add() {
         assertEquals(4.0, getCalculator().add(2.0, 2.0), 0.000001);
         verify(coreNumberCalculator).add(2.0, 2.0);
     }

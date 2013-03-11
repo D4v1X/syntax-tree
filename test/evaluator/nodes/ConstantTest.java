@@ -3,6 +3,7 @@ package evaluator.nodes;
 import evaluator.types.Double;
 import static org.junit.Assert.*;
 import org.junit.Test;
+
 public class ConstantTest {
 
     @Test
