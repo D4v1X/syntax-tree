@@ -22,5 +22,12 @@ public class UnaryOperation extends Operation {
     @Override
     public Type evaluate() {
         throw new UnsupportedOperationException("Not supported yet.");
+        //TODO evaluate unary
+    }
+
+    @Override
+    public String parse() {
+        throw new UnsupportedOperationException("Not supported yet.");
+        //TODO evaluate unary
     }
 }

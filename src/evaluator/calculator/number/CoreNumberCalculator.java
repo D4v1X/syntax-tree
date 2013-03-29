@@ -1,9 +1,16 @@
 package evaluator.calculator.number;
 
 import evaluator.calculators.Calculator;
+import evaluator.calculators.annotations.Constants;
 import evaluator.calculators.annotations.Operators;
 
 public class CoreNumberCalculator extends Calculator implements NumberCalculator {
+
+    @Constants("PI")
+    static Double PI = Math.PI;
+    
+    @Constants("E")
+    static Double E = Math.E;
 
     @Override
     @Operators("+")

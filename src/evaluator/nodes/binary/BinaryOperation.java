@@ -37,4 +37,9 @@ public class BinaryOperation extends Operation {
         Type right = getRightChild().evaluate();
         return evaluate.calculate(operator, left, right);
     }
+
+    @Override
+    public String parse() {
+        return getLeftChild().parse() + getOperator().getOperator() + getRightChild().parse();
+    }
 }

@@ -27,11 +27,6 @@ public class CalculateEvaluate implements Evaluate {
                 linkedTable.put(getMethodSignature(method), method);
             }
         }
-//        linkedTable.put("addDoubleDouble", null);
-//        linkedTable.put("+", Operator.add);
-//        linkedTable.put("-", Operator.subtract);
-//        linkedTable.put("*", Operator.mul);
-//        operatorMap.get("+",new Operator("+", OperatorType.BINARY));
     }
 
     @Override
@@ -40,12 +35,6 @@ public class CalculateEvaluate implements Evaluate {
             return null;
         }
         Method method = linkedTable.get(getsignature(operator, arg0, arg1));
-//        for (Method method : allmethods) {
-//            Operators anno = method.getAnnotation(Operators.class);
-//            if (anno.value().equals(operator.getOperator())) {
-//                // TODO Poco a poco xD
-//            }
-//        }
         try {
             return findType(method.invoke(method.getDeclaringClass().newInstance(), arg0.getValue(), arg1.getValue()));
         } catch (InstantiationException ex) {

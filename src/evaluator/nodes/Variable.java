@@ -23,4 +23,9 @@ class Variable extends Node {
     public Type evaluate() {
         return value;
     }
+
+    @Override
+    public String parse() {
+        return value.getValue().toString();
+    }
 }
