@@ -14,11 +14,11 @@ public class MockNumberCalculatorTest {
         coreNumberCalculator = mock(NumberCalculator.class);
         when(coreNumberCalculator.add(2.0, 2.0)).thenReturn(4.0);
         when(coreNumberCalculator.subtract(4.0, 2.0)).thenReturn(2.0);
-        when(coreNumberCalculator.mul(3.0, 2.0)).thenReturn(6.0);
+        when(coreNumberCalculator.mul(2.0, 3.0)).thenReturn(6.0);
     }
 
     private NumberCalculator getCalculator() {
-        return new CoreNumberCalculator();
+        return coreNumberCalculator;
     }
 
     @Test
