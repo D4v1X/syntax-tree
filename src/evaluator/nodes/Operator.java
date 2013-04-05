@@ -1,31 +1,26 @@
 package evaluator.nodes;
 
-public class Operator {
-    //private
-    //crear metodo publico
-    //public static operator get(string symbol)
-    //chack operator()
-    //operator get (symbol);
-    //clase parser abstracta
-    //symbolo extend opetator
-//        linkedTable.put("+", Operator.add);
-//        linkedTable.put("-", Operator.subtract);
-//        linkedTable.put("*", Operator.mul);
-    public static final Operator add = new Operator("add", '+', OperatorType.BINARY);
-    public static final Operator subtract = new Operator("subtract", '-', OperatorType.BINARY);
-    public static final Operator mul = new Operator("mul", '*', OperatorType.BINARY);
+import evaluator.symbols.Precedencia;
+import evaluator.symbols.Symbol;
+
+public class Operator extends Symbol {
+
+    public static final Operator add = new Operator("add", '+', OperatorType.BINARY, Precedencia.sum);
+    public static final Operator subtract = new Operator("subtract", '-', OperatorType.BINARY, Precedencia.subtraction);
+    public static final Operator mul = new Operator("mul", '*', OperatorType.BINARY, Precedencia.multiplication);
     
     private String name;
     private final char operator;
     private final OperatorType operatorType;
 
-    public Operator(char operator, OperatorType operatorType) {
+    public Operator(char operator, OperatorType operatorType, Precedencia precedencia) {
+        super(precedencia);
         this.operator = operator;
         this.operatorType = operatorType;
     }
 
-    public Operator(String name, char operator, OperatorType operatorType) {
-        this(operator, operatorType);
+    public Operator(String name, char operator, OperatorType operatorType, Precedencia precedencia) {
+        this(operator, operatorType, precedencia);
         this.name = name;
     }
 

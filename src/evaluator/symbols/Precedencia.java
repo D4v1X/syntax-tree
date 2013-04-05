@@ -1,6 +1,6 @@
 package evaluator.symbols;
 
-class Precedencia {
+public class Precedencia {
     public static final Precedencia funtion = new Precedencia(4);
     public static final Precedencia empowerment = new Precedencia(3);
     public static final Precedencia roots = new Precedencia(3);
@@ -17,6 +17,4 @@ class Precedencia {
     public Integer getValue() {
         return value;
     }
-    
-    
 }
