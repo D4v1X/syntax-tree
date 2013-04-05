@@ -1,32 +1,44 @@
 package evaluator.calculators;
 
 import evaluator.Type;
-import evaluator.calculator.number.CoreNumberCalculator;
 import evaluator.nodes.Operator;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Set;
+import org.reflections.Reflections;
+import org.reflections.util.ClasspathHelper;
+import org.reflections.util.ConfigurationBuilder;
 
 public class CalculateEvaluate implements Evaluate {
 
     private static HashMap<String, Method> linkedTable;
-    private static List<Class<? extends Calculator>> calculators = new ArrayList<>();
 
     static {
-        calculators.addAll(Arrays.asList(CoreNumberCalculator.class));
+        Reflections ref = new Reflections(new ConfigurationBuilder().setUrls(ClasspathHelper.forJavaClassPath()));
+        addMethods(ref.getSubTypesOf(Calculator.class));
     }
 
-    static {
-        linkedTable = new HashMap<>();
-        for (Class calculator : calculators) {
-            Method[] methods = calculator.getDeclaredMethods();
-            for (Method method : methods) {
-                linkedTable.put(getMethodSignature(method), method);
-            }
+    private static void addMethods(Set<Class<? extends Calculator>> classes) {
+        for (Class<?> theClass : classes) {
+            addMethods(theClass);
         }
+    }
+
+    private static void addMethods(Class<?> theClass) {
+        linkedTable = new HashMap<>();
+        for (Method method : theClass.getDeclaredMethods()) {
+            linkedTable.put(getMethodSignature(method), method);
+        }
+    }
+
+    private static String getMethodSignature(Method method) {
+        String signature = method.getName();
+        Class<?>[] params = method.getParameterTypes();
+        for (Class param : params) {
+            signature = signature + param.getSimpleName();
+        }
+        return signature;
     }
 
     @Override
@@ -52,15 +64,6 @@ public class CalculateEvaluate implements Evaluate {
             return new evaluator.types.Double((Double) object);
         }
         return null;
-    }
-
-    private static String getMethodSignature(Method method) {
-        String signature = method.getName();
-        Class<?>[] params = method.getParameterTypes();
-        for (Class param : params) {
-            signature = signature + param.getSimpleName();
-        }
-        return signature;
     }
 
     private String getsignature(Operator operator, Type arg0, Type arg1) {
