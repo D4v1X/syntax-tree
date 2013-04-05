@@ -9,10 +9,6 @@ public class CoreNumberCalculatorTest {
         return new CoreNumberCalculator();
     }
 
-    public RangeNumberCalculator getCalculator(Double upperLimit, Double lowerLimit) {
-        return new RangeNumberCalculator(getCalculator(), new Range(upperLimit, lowerLimit));
-    }
-
     @Test
     public void addTestDoubleDouble() {
         assertEquals(4.0, getCalculator().add(2.0, 2.0), 0.0);
